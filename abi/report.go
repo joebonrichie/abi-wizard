@@ -166,7 +166,8 @@ func (r Report) walkSym(root, path string) error {
 	} // implicit else: abs path outside root
 	info, err := os.Lstat(link)
 	if err != nil {
-		return err
+		fmt.Printf("Warning: %s\n", err)
+		return nil
 	}
 	return r.walkPivot(root, link, info)
 }
