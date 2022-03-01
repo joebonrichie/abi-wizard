@@ -18,7 +18,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/DataDrake/abi-wizard/abi"
+	"github.com/joebonrichie/abi-wizard/abi"
 	"os"
 )
 
