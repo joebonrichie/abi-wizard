@@ -122,7 +122,7 @@ func (r Report) Save(path string) error {
 func (r Report) Add(root, path string) error {
 	info, err := os.Lstat(path)
 	if err != nil {
-		return err
+		return nil
 	}
 	return r.walkPivot(root, path, info)
 }
