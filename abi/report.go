@@ -143,7 +143,7 @@ func (r Report) Add(root, path string) error {
 			return nil
 		}
 		if err != nil {
-			return fmt.Errorf("failed to open file '%s', reason: %s", path, err)
+			return fmt.Errorf("Add: failed to open file '%s', reason: %s", path, err)
 		}
 		defer f.Close()
 		return r.AddFile(f, info.Name())
@@ -161,7 +161,7 @@ func (r Report) AddFile(in io.ReaderAt, name string) error {
 		if err == io.EOF {
 			return nil
 		}
-		return fmt.Errorf("failed to open '%s', reason: '%s'", name, err)
+		return fmt.Errorf("AddFile: failed to open '%s', reason: '%s'", name, err)
 	}
 	defer f.Close()
 	// get the architecture entry or create if missing
